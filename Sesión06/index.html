@@ -5,18 +5,18 @@
     <script src="angular.min.js"></script>
     <script src="app.js"></script>
     <style>body { font-size: 1.3em; }</style>
-    <title>Name Calculator</title>
+    <title>Calculadora de Nombres</title>
   </head>
-  <body ng-app="NameCalculator">
-    <h1>Name Calculator</h1>
-    <div ng-controller="NameCaculatorController">
+  <body ng-app="CalculadoraNombre">
+    <h1>Calculadora de Nombres</h1>
+    <div ng-controller="CalculadoraNombreControlador">
       <div>
-        Your name:
+        Tu nombre:
         <input type="text"
-          ng-model="name"
-          ng-keyup="displayNumeric();">
+          ng-model="nombre"
+          ng-keyup="mostrarNumero();">
       </div>
-      <div>Total Numeric value of person's name is: {{totalValue}}</div>
+      <div>El valor numérico total de tu nombre es: {{valorTotal}}</div>
     </div>
   </body>
 </html>
