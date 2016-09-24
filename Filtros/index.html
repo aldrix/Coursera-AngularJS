@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app='MensajeAplicacion'>
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <style> 
+      * {
+        font-family: Helvetica;
+      }
+      body {
+        font-size: 1.2em;
+      } 
+    </style>
+    <title>Filtros Personalizados</title>
+  </head>
+  <body>
+    <h1>Filtros Personalizados</h1>
+    <div ng-controller='MensajeControlador'>
+      <b>Mensaje Original:</b> {{mostrarMensaje()}} <br>
+      <b>Mensaje en Mayúsculas:</b> {{mostrarMayusculaMensaje()}} <br>
+      <b>Mensaje con sustituciones:</b> {{mostrarAmaMensaje()}} <br>
+      <b>Mensaje con filtro personalizado:</b> {{mostrarAmaMensaje() | sustituir: 'ama' : 'anhela'}} <br>
+      <b>Mensaje con doble filtro:</b> {{mostrarAmaMensaje() | sustituir: 'ama' : 'adora' | uppercase}} <br>
+      <div>
+        <br>
+        <button ng-click='alimentarYaakov()'>
+          Alimenta a Yaakov
+        </button>
+        <br><br>
+        <img ng-src='images/yaakov_{{estado}}.png'>
+      </div>
+    </div>
+  </body>
+</html>
