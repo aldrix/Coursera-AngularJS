@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app='ListaComprasAplicacion'>
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <style> body { font-size: 1.2em; }</style>
+    <link rel="shurtcut icon" type="image/x-icon" href="favicon.ico"/>
+    <title>Lista de Compras</title>
+  </head>
+  <body>
+    <h1>Lista de Compras</h1>
+    <div ng-controller="ListaComprasAgregarControlador as agregador">
+    	<input type="text" ng-model="agregador.nombre" placeholder="Nombre del Item">
+    	<input type="text" ng-model="agregador.cantidad" placeholder="Cantidad del Item">
+    	<button ng-click="agregador.agregarItem()">Agregar Item</button>
+    </div>
+    <div ng-controller="ListaComprasMostrarControlador as mostrarLista">
+    	<ol>
+    		<li ng-repeat="item in mostrarLista.listaItems">
+    			{{item.cantidad}} de {{item.nombre}}
+    			<button ng-click="mostrarLista.eliminarItem($index)">Eliminar Item</button>
+    		</li>
+    	</ol>
+    </div>
+  </body>
+</html>
