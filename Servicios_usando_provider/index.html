@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app='ListaComprasAplicacion'>
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shurtcut icon" type="image/x-icon" href="favicon.ico"/>
+    <title>Servicio Personalizado</title>
+  </head>
+  <body>
+    <h1>Servicio Personalizado usando Provider</h1>
+
+    <!-- Lista preconfigurada -->
+    <div id="lista" ng-controller='ListaComprasControlador as lista'>
+      <h3>Lista de compras</h3>
+      <input type="text" ng-model="lista.nombre" placeholder="Nombre del item">
+      <input type="text" ng-model="lista.cantidad" placeholder="Cantidad del item">
+      <button ng-click="lista.agregarItem()">Agregar</button>
+      <ol>
+        <li ng-repeat="item in lista.listaItems">
+          {{ item.cantidad }} of {{ item.nombre }}
+          <button ng-click="lista.eliminarItem($index);">Eliminar Item</button>
+        </li>
+      </ol>
+      <div class="error">Error: {{lista.mensajeError}}</div>
+    </div>
+    
+  </body>
+</html>
