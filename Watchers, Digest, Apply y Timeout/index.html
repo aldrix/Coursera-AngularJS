@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app='ContadorAplicacion'>
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <style> 
+      body { 
+        font-size: 1.2em; 
+        font-family: Helvetica;
+      }
+    </style>
+    <title>Ciclo Digest</title>
+  </head>
+  <body>
+    <h1>Ciclo Digest</h1>
+    <div ng-controller="ContadorControlador">
+      <button ng-click="mostrarNumeroDeWatchers()">Log # de Watchers</button>
+      <input type="text" ng-model="nombre">
+      <div>
+        <br>
+        <button ng-click="contarUnaVez()">Contar una vez</button>
+        <button ng-click="contarMas()">Incrementar contador</button>
+      </div>      
+      <div>
+        <br>
+        Contador (Una vez): {{unaVezContador}} <br>
+        Contador (Normal): {{contador}}
+      </div>
+      <div>
+        <br>
+        <button ng-click="contarRetraso()">Incrementar contador con retraso</button>
+        <br>
+        Contador (Retraso): {{retrasoContador}}
+      </div>
+    </div>
+    Activar la consola del explorador para observar los cambios :O
+  </body>
+</html>
