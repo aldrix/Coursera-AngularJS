@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app='ControladorHerenciaAplicacion'>
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <style> body { font-size: 1.2em; }</style>
+    <link rel="shurtcut icon" type="image/x-icon" href="favicon.ico"/>
+    <title>Controlador como sintaxis</title>
+  </head>
+  <body>
+  <h1>Controlador como sintaxis</h1>
+  <div ng-controller="ControladorPadre1">
+    <div ng-controller="ControladorHijo1">
+    </div>
+  </div>
+  <div ng-controller="ControladorPadre2 as padre">
+    Valor del padre: {{padre.valor}}
+    <div ng-controller="ControladorHijo2 as hijo">
+      Valor del hijo: {{hijo.valor}}
+      Valor del padre: {{padre.valor}}
+    </div>
+  </div>
+  </body>
+</html>
