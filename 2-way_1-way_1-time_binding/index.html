@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app='BindingAplicacion'>
+	<head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <style>
+      body {
+        font-size: 1.2em;
+        font-family: Helvetica;
+      }
+    </style>
+		<title>2-way, 1-way y 1-time binding</title>
+	</head>
+	<body>
+    <h1>2-way, 1-way y 1-time binding</h1>
+    <div ng-controller="BindingControlador">
+      <button ng-click="mostrarNumeroDeWatchers()">Log # de Watchers</button>
+      <button ng-click="modificarNombreCompleto()">Modificar nombre completo</button>
+      <br><br>
+      Nombre completo: {{ ::nombreCompleto }} <!--Este es el 1-time binding-->
+      <br><br>
+      <button ng-click="logPrimerNombre()">Log Primer Nombre</button>
+      <br><br>
+      <button ng-click="logNombreCompleto()">Log Nombre Completo</button>
+      <br><br>
+      <div>
+        Primer nombre: <input type="text" ng-model="primerNombre"> <!--Este es el 2-way binding-->
+        {{primerNombre}} <!--Este es el 1-way binding-->
+      </div>
+    </div>
+    <br><br><br>
+    Activa la consola del explorador para que veas los cambios :)
+	</body>
+</html>
