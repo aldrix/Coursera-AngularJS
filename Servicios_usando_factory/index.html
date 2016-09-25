@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app='ListaComprasAplicacion'>
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shurtcut icon" type="image/x-icon" href="favicon.ico"/>
+    <title>Servicio Personalizado</title>
+  </head>
+  <body>
+    <h1>Servicio Personalizado usando Factory</h1>
+
+    <!-- LISTA #1 - items ilimitados -->
+    <div id="lista1" ng-controller='ListaComprasControlador1 as lista1'>
+      <h3>Lista de compras #1</h3>
+      <input type="text" ng-model="lista1.nombre" placeholder="Nombre del item">
+      <input type="text" ng-model="lista1.cantidad" placeholder="Cantidad del item">
+      <button ng-click="lista1.agregarItem()">Agregar</button>
+      <ol>
+        <li ng-repeat="item in lista1.listaItems">
+          {{ item.cantidad }} of {{ item.nombre }}
+          <button ng-click="lista1.eliminarItem($index);">Eliminar Item</button>
+        </li>
+      </ol>
+      <div class="error">Error: {{lista1.mensajeError}}</div>
+    </div>
+
+    <!-- LISTA #2 (limitado a 3 items) -->
+    <div id="lista2" ng-controller='ListaComprasControlador2 as lista2'>
+      <h3>Lista Compra #2 (limitado a 3 items)</h3>
+      <input type="text" ng-model="lista2.nombre" placeholder="Nombre del item">
+      <input type="text" ng-model="lista2.cantidad" placeholder="Cantidad del item">
+      <button ng-click="lista2.agregarItem();">Agregar</button>
+      <ol>
+        <li ng-repeat="item in lista2.listaItems">
+          {{ item.cantidad }} of {{ item.nombre }}
+          <button ng-click="lista2.eliminarItem($index);">Eliminar Item</button>
+        </li>
+      </ol>
+      <div class="error">Error: {{lista2.mensajeError}}</div>
+    </div>
+
+    </div>
+  </body>
+</html>
