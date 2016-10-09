@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="ListaCompraAplicacion">
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>Directivas Personalizadas</title>
+  </head>
+  <body>
+    <h1>Expandiendo los Tag HTML con directivas personalizadas</h1>
+  
+    <!-- LISTA #1: Items ilimitados -->
+    <div id="lista1" ng-controller="ListaCompraControlador1 as lista">
+      <h3>Lista de compra #1</h3>
+      <input type="text" ng-model="lista.nombreItem" placeholder="nombre del item">
+      <input type="text" ng-model="lista.cantidadItem" placeholder="cantidad del item">
+      <button ng-click="lista.agregarItem();">Agregar Item</button>
+      <ol>
+        <list-item ng-repeat="item in lista.items"></list-item>
+
+<!--         <li ng-repeat="item in lista.items">
+          <list-item-description></list-item-description>
+          <button ng-click="lista.eliminarItem($index);">Eliminar Item</button>
+        </li> -->
+      </ol>
+      <div ng-if="lista.errorMessage" class="error">Error: {{lista.errorMessage}}</div>
+    </div>
+
+    <!-- LISTA #2: Items limitados (maximo 3) -->
+    <div id="lista2" ng-controller="ListaCompraControlador2 as lista">
+      <h3>Lista de compra #2 (limitado a 3 items)</h3>
+      <input type="text" ng-model="lista.nombreItem" placeholder="nombre del item">
+      <input type="text" ng-model="lista.cantidadItem" placeholder="cantidad del item">
+      <button ng-click="lista.agregarItem();">Agregar Item</button>
+      <ol>
+        <list-item ng-repeat="item in lista.items"></list-item>
+
+<!--         <li ng-repeat="item in lista.items">
+          <list-item-description></list-item-description>
+          <button ng-click="lista.eliminarItem($index);">Eliminar Item</button>
+        </li> -->
+      </ol>
+      <div ng-if="lista.errorMessage" class="error">Error: {{lista.errorMessage}}</div>
+    </div>
+
+  </body>
+</html>
