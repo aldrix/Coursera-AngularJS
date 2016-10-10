@@ -65,7 +65,7 @@ function ListaCompraControlador2(ListaCompraFactory) {
 
   lista.agregarItem = function () {
     try {
-      listaCompra.agregarItem(listaCompra.nombreItem, listaCompra.cantidadItem);
+      listaCompra.agregarItem(lista.nombreItem, lista.cantidadItem);
     } catch (error) {
       lista.errorMessage = error.message;
     }
