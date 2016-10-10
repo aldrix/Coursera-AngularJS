@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="ListaCompraAplicacion">
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>Directivas Scope Aislado</title>
+  </head>
+  <body>
+    <h1>Directivas personalizadas con scope aislado</h1>
+  
+    <!-- LISTA #1: Items ilimitados -->
+    <div id="lista1" ng-controller="ListaCompraControlador1 as lista1">
+      <input type="text" ng-model="lista1.nombreItem" placeholder="nombre del item">
+      <input type="text" ng-model="lista1.cantidadItem" placeholder="cantidad del item">
+      <button ng-click="lista1.agregarItem();">Agregar Item</button>
+
+      <shopping-list my-list="lista1" title="{{lista1.titulo}}"></shopping-list>
+
+      <div ng-if="lista1.errorMessage" class="error">Error: {{lista1.errorMessage}}</div>
+    </div>
+
+    <!-- LISTA #2: Items limitados (maximo 3) -->
+    <div id="lista2" ng-controller="ListaCompraControlador2 as lista2">
+      <input type="text" ng-model="lista2.nombreItem" placeholder="nombre del item">
+      <input type="text" ng-model="lista2.cantidadItem" placeholder="cantidad del item">
+      <button ng-click="lista2.agregarItem();">Agregar Item</button>
+
+      <shopping-list my-list="lista2" title="Lista de compra #2 (limitado a 3 items)"></shopping-list>
+
+      <div ng-if="lista.errorMessage" class="error">Error: {{lista.errorMessage}}</div>
+    </div>
+
+  </body>
+</html>
