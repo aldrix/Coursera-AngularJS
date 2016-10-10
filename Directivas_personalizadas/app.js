@@ -10,7 +10,7 @@ angular.module('ListaCompraAplicacion',[])
 .directive('listItem', ListaItem);
 
 function ListaItem() {
-  var ddo = {  //Definition Directive Object
+  var ddo = {  //Directive Definition Object
     templateUrl: 'listItem.html'
   };
 
@@ -18,7 +18,7 @@ function ListaItem() {
 }
 
 function ListaItemDescripcion() {
-  var ddo = {
+  var ddo = { //Directive Definition Object
     template: '{{ item.cantidad }} of {{ item.nombre }}'
   };
 
