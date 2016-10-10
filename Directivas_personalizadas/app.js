@@ -11,6 +11,7 @@ angular.module('ListaCompraAplicacion',[])
 
 function ListaItem() {
   var ddo = {  //Directive Definition Object
+  	restrict: 'E', //Solo se puede usar esta directiva como elemento.
     templateUrl: 'listItem.html'
   };
 
@@ -19,6 +20,7 @@ function ListaItem() {
 
 function ListaItemDescripcion() {
   var ddo = { //Directive Definition Object
+  	// Como no se especifico el restrict entonces por defecto es AE.
     template: '{{ item.cantidad }} of {{ item.nombre }}'
   };
 
